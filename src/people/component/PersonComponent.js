@@ -3,8 +3,9 @@ import testPeople from '../model/TestPeople'
 
 function PersonComponent () {
     let infos = testPeople.allInfos()
+    let html = infos.map(info => <li>{info}</li>)
     return (
-        <p>{infos[1]}</p>
+        <p><ol>{html}</ol></p>
     );
 }
 
