@@ -1,0 +1,12 @@
+.People-title {
+    text-align: center;
+    color: blue;
+    font-size: 32px;
+    font-weight: bolder;
+    display: flex;
+    min-height: 80vh;
+    background-color: lightblue;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
