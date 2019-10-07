@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import PeopleComponent from './people/component/People'
-import FooterComponent from './footer/component/Footer'
+import PeopleHeaderComponent from "./main/component/PeopleHeaderComponent";
+import PeopleFooterComponent from './main/component/PeopleFooterComponent'
+import ContentComponent from './content/component/ContentComponent'
 
 function App() {
   return (
     <div className="App">
-      <PeopleComponent/>
-      <FooterComponent/>
+      <PeopleHeaderComponent/>
+      <ContentComponent/>
+      <PeopleFooterComponent/>
     </div>
   );
 }
