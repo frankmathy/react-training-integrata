@@ -3,7 +3,7 @@ import './PeopleMainComponent.css';
 
 function PeopleFooterComponent () {
     return (
-        <p className='footer'>Javacream Training</p>
+        <p className='footer'>(C) React Guru 2019</p>
     );
 }
 
