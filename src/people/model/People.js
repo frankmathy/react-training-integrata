@@ -15,6 +15,10 @@ export class People {
         return this.persons
     }
 
+    allInfos() {
+        return this.persons.map(person => person.info())
+    }
+
     filterForGender(gender) {
         return this.persons.filter(person => person.gender === gender).map(person => person.info())
     }
