@@ -26,14 +26,12 @@ it('filters for males', () => {
     let people = createPeople()
     let males = people.males()
     expect(males.length).toBe(4)
-    console.log('Male persons:')
-    males.forEach(value => console.log(value))
+    console.log('Male persons:' + males)
 })
 
 it('filters for females', () => {
     let people = createPeople()
-    let males = people.females()
-    expect(males.length).toBe(3)
-    console.log('Female persons:')
-    males.forEach(value => console.log(value))
+    let females = people.females()
+    expect(females.length).toBe(3)
+    console.log('Female persons:' + females)
 })

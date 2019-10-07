@@ -4,10 +4,7 @@ import { throwStatement } from "@babel/types";
 export class People {
 
     persons = new Array();
-
-    constructor() {
-        var id = 1 
-    }
+    id = 1 
 
     add(lastname, firstname, gender, height) {
         let newPerson = new Person(this.id++, lastname, firstname, height, gender)
