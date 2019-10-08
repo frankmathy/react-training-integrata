@@ -2,23 +2,17 @@ import React, { Component } from 'react';
 import '../../App.css';
 import PersonComponent from './PersonComponent'
 import PeopleComponent from './PeopleComponent';
+import PersonInputComponent from './PersonInputComponent'
 import { peopleData, userProfile } from '../model/PeopleData'
 
 class PeopleAppComponent extends Component {
   state = {people: peopleData, userProfile: userProfile}
 
-  constructor() {
-    super()
-    setTimeout(() => {
-      userProfile.lastname = "Hoffmann"
-      console.log("AFTER TIMEOUT: " + userProfile.info())
-      this.setState({ ...this.state, ...{userProfile: userProfile}})
-    }, 5000)
-    setTimeout(() => {
-        peopleData.add('Mathy', 'Frank', 'm', 180)
-        this.setState({ ...this.state, ...{people: peopleData}})
-      }, 3000)
-    }
+  createPersonCallback = (personData) => {
+      peopleData.add(personData.lastname, personData.firstname, personData.gender, personData.height)
+      console.log("CREATE PERSON " + personData)
+      this.setState({...this.state, ...{people: peopleData}})
+  }
 
   render() {
     return (
@@ -27,6 +21,7 @@ class PeopleAppComponent extends Component {
           Aktueller User: <PersonComponent person={this.state.userProfile} detail={false}/>
         </div>
         <PeopleComponent people={this.state.people}/>
+        <PersonInputComponent handleCreatePerson={this.createPersonCallback}/>
       </div>
     );
   }
