@@ -12,9 +12,13 @@ class PeopleAppComponent extends Component {
     setTimeout(() => {
       userProfile.lastname = "Hoffmann"
       console.log("AFTER TIMEOUT: " + userProfile.info())
-      this.setState({ userProfile: userProfile, people: testPeople})
+      this.setState({ ...this.state, ...{userProfile: userProfile}})
     }, 5000)
-  }
+    setTimeout(() => {
+        testPeople.add('Mathy', 'Frank', 'm', 180)
+        this.setState({ ...this.state, ...{people: testPeople}})
+      }, 3000)
+    }
 
   componentDidMount() {
     let peopleState = {people: testPeople, userProfile: userProfile}
