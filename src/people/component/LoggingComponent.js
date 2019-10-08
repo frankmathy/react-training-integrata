@@ -7,14 +7,18 @@ class LoggingComponent extends Component {
 
     initialized = false
 
-    constructor() {
-        super()
-        this.log = new Log(5)
-        this.state = {log: this.log}
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            log: new Log(props.maxEntries)
+        }
+
         if (!this.initialized) {
             PubSub.subscribe('EVENTS', (msg, data) => {
-                this.log.add(data)
-                this.setState({...this.state, ...{log: this.log}})
+                let log = this.state.log
+                log.add(data)
+                this.setState({...this.state, ...{log: log}})
                 console.log("LoggingComponent received event: " + data)
             })
             this.initialized = true

@@ -10,7 +10,7 @@ function App () {
     <div className="App">
       <PeopleHeaderComponent/>
       <PeopleAppComponent/>
-      <LoggingComponent maxEntries={5}/>
+      <LoggingComponent maxEntries="5"/>
       <PeopleFooterComponent/>
     </div>
   );
