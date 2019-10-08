@@ -1,4 +1,5 @@
 import { Person } from "./Person";
+import PubSub from 'pubsub-js'
 
 export class People {
 
@@ -8,6 +9,7 @@ export class People {
     add(lastname, firstname, gender, height) {
         let newPerson = new Person(this.id++, lastname, firstname, height, gender)
         this.persons.push(newPerson)
+        PubSub.publish('EVENTS', 'Added person ' + firstname + " " + lastname);
     }
 
     all() {
