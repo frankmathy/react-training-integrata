@@ -3,7 +3,7 @@ import './App.css';
 import PeopleHeaderComponent from "./main/component/PeopleHeaderComponent";
 import PeopleFooterComponent from './main/component/PeopleFooterComponent'
 import PersonComponent from './people/component/PersonComponent'
-import { userProfile } from './people/model/TestPeople'
+import { testPeople, userProfile } from './people/model/TestPeople'
 import PeopleComponent from './people/component/PeopleComponent';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <div className="App-currentUser">
         Aktueller User: <PersonComponent person={userProfile} detail={false}/>
       </div>
-      <PeopleComponent/>
+      <PeopleComponent people={testPeople}/>
       <PeopleFooterComponent/>
     </div>
   );

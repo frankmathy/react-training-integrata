@@ -1,9 +1,8 @@
 import { Person } from "./Person";
-import { throwStatement } from "@babel/types";
 
 export class People {
 
-    persons = new Array();
+    persons = []
     id = 1 
 
     add(lastname, firstname, gender, height) {
