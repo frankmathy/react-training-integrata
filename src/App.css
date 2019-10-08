@@ -26,3 +26,8 @@
   font-size: 10px;
   color: darkblue;
 }
+
+ul {
+  text-align: center;
+  list-style-position: inside;
+}
