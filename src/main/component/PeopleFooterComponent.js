@@ -3,7 +3,7 @@ import './PeopleMainComponent.css';
 
 function PeopleFooterComponent () {
     return (
-        <p className='footer'>(C) Frank AG 2019</p>
+        <p className='footer'>The People Company</p>
     );
 }
 

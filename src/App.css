@@ -20,3 +20,9 @@
 .App-link {
   color: #09d3ac;
 }
+
+.App-currentUser {
+  text-align: right;
+  font-size: 10px;
+  color: darkblue;
+}
