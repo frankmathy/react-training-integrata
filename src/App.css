@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .App-logo {
@@ -33,7 +33,7 @@ ul {
 }
 
 .App-log {
-  font-size: 8px;
+  font-size: 10px;
   background: lightyellow;
   text-align: left;
 }

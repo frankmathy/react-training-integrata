@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from 'react-bootstrap/Button';
 
 class PersonInputComponent extends Component {
     state = {
@@ -35,7 +36,7 @@ class PersonInputComponent extends Component {
                     </select>                
                 </label>&nbsp;
                 <input placeholder="Height" name="height" value={this.state.height} onChange={this.handleChange}/>&nbsp;
-                <input type="submit" value="Create Person"/>
+                <Button type="submit">Create Person</Button>
             </form>
         )
     }

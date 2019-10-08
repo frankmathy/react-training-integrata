@@ -7,7 +7,7 @@ export class Log {
     }
 
     add(message) {
-        this.logEntries.unshift(message)
+        this.logEntries.unshift(new Date().toISOString().substring(0, 19) + ": " + message)
         this.logEntries = this.logEntries.slice(0, this.maxSize)
     }
 }

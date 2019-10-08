@@ -1,18 +1,16 @@
 import React from 'react';
 import PersonComponent from './PersonComponent'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
 
 let PeopleComponent = (props) => {
     const allPeople = props.people.all().map(person =>
-        <li key={person.id}>
-            <PersonComponent person={person} detail={true}/>
-        </li>
+        <PersonComponent person={person} detail={true}/>
     );
     return (
-        <div>
-            <ul>
-                {allPeople}
-            </ul>
-        </div>    
+        <Container>
+            {allPeople}
+        </Container>
     )
 }
 

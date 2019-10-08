@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import PeopleHeaderComponent from "./main/component/PeopleHeaderComponent";
 import PeopleFooterComponent from './main/component/PeopleFooterComponent'
