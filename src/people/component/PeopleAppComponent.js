@@ -12,7 +12,7 @@ class PeopleAppComponent extends Component {
     setTimeout(() => {
       userProfile.lastname = "Hoffmann"
       console.log("AFTER TIMEOUT: " + userProfile.info())
-      this.setState({ userProfile: userProfile})
+      this.setState({ userProfile: userProfile, people: testPeople})
     }, 5000)
   }
 
