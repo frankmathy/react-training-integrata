@@ -1,11 +1,8 @@
 import React from 'react';
-import testPeople from '../model/TestPeople'
 
-function PersonComponent () {
-    let infos = testPeople.allInfos()
-    let html = infos.map(info => <li>{info}</li>)
+let PersonComponent = (props) => {
     return (
-        <p><ol>{html}</ol></p>
+        <p>{props.person.info()}</p>
     );
 }
 
