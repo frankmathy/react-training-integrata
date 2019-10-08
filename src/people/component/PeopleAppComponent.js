@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import '../../App.css';
 import PersonComponent from './PersonComponent'
 import PeopleComponent from './PeopleComponent';
-import { testPeople, userProfile } from '../model/TestPeople'
+import { peopleData, userProfile } from '../model/PeopleData'
 
 class PeopleAppComponent extends Component {
-  state = {people: testPeople, userProfile: userProfile}
+  state = {people: peopleData, userProfile: userProfile}
 
   constructor() {
     super()
@@ -15,15 +15,10 @@ class PeopleAppComponent extends Component {
       this.setState({ ...this.state, ...{userProfile: userProfile}})
     }, 5000)
     setTimeout(() => {
-        testPeople.add('Mathy', 'Frank', 'm', 180)
-        this.setState({ ...this.state, ...{people: testPeople}})
+        peopleData.add('Mathy', 'Frank', 'm', 180)
+        this.setState({ ...this.state, ...{people: peopleData}})
       }, 3000)
     }
-
-  componentDidMount() {
-    let peopleState = {people: testPeople, userProfile: userProfile}
-    this.setState(peopleState)
-  }
 
   render() {
     return (
