@@ -3,14 +3,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 import PeopleHeaderComponent from "./main/component/PeopleHeaderComponent";
 import PeopleFooterComponent from './main/component/PeopleFooterComponent'
-import PeopleAppComponent from  './people/component/PeopleAppComponent'
+import PeopleFromServerAppComponent from  './people/component/PeopleFromServerAppComponent'
 import LoggingComponent from './people/component/LoggingComponent'
 
 function App () {
   return (
     <div className="App">
       <PeopleHeaderComponent/>
-      <PeopleAppComponent/>
+      <PeopleFromServerAppComponent/>
       <LoggingComponent maxEntries="5"/>
       <PeopleFooterComponent/>
     </div>
