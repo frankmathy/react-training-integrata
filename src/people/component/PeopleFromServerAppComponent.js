@@ -12,10 +12,24 @@ class PeopleAppComponent extends Component {
     userProfile: userProfile
   }
 
+  async loadData()  {
+    try {
+      let result = await fetch('http://localhost:8080/people')
+      this.state.people.persons = await result.json()
+      this.setState({...this.state, ...{people: this.state.people}})
+    } catch(error) {
+      alert("Error loading person data: " + error)
+    }
+  }
+
   createPersonCallback = (personData) => {
       this.state.people.add(personData.lastname, personData.firstname, personData.gender, personData.height)
       //console.log("CREATE PERSON " + personData)
       this.setState({...this.state, ...{people: this.state.people}})
+  }
+
+  componentDidMount() {
+    this.loadData()
   }
 
   render() {

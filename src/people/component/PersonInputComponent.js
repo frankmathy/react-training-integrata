@@ -26,6 +26,7 @@ class PersonInputComponent extends Component {
     render() {
         return (
             <form onSubmit={this.handleFormSubmit}>
+                &nbsp;
                 <input placeholder="Lastname" name="lastname" value={this.state.lastname} onChange={this.handleChange}/>&nbsp;
                 <input placeholder="Firstname" name="firstname" value={this.state.firstname} onChange={this.handleChange}/>&nbsp;
                 <label>
