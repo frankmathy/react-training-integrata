@@ -31,4 +31,9 @@ export class People {
     females() {
         return this.filterForGender('f')
     }
+
+    setPersons(persons) {
+        this.persons = persons
+        this.id = Math.max(...persons.map(p => p.id), 0) + 1;
+    }
 }

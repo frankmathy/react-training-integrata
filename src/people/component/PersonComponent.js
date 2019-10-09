@@ -4,6 +4,7 @@ let PersonComponent = (props) => {
     if(props.detail) {
         return (
             <tr>
+                <td>{props.person.id}</td>
                 <td>{props.person.lastname}</td>
                 <td>{props.person.firstname}</td>
                 <td>{props.person.gender}</td>
@@ -13,6 +14,7 @@ let PersonComponent = (props) => {
     } else {
         return (
             <tr>
+                <td>{props.person.id}</td>
                 <td>{props.person.lastname}</td>
                 <td>{props.person.firstname}</td>
             </tr>

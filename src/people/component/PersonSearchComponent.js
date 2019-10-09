@@ -8,10 +8,14 @@ class PersonSearchComponent extends Component{
   }
 
   async loadData(id)  {
-    const url = `http://10.12.6.1:8080/people/${id}`
-    let result = await fetch (url)
-    let personData = await result.json()
-    this.setState({...this.state, ...{person: personData.lastname}})
+    const url = `http://localhost:8080/people/${id}`
+    try {
+        let result = await fetch (url)
+        let personData = await result.json()
+        this.setState({...this.state, ...{person: personData.lastname}})
+    } catch(err) {
+        this.setState({...this.state, ...{person: `Error: ${err}`}})
+    }
   }
 
   handleFormSubmit = (event) => {
@@ -26,7 +30,8 @@ class PersonSearchComponent extends Component{
   render(){
     return (
       <>
-      <input placeholder="Id" name="id" value={this.state.fields.id} onChange={this.handleChange}></input>
+      &nbsp;
+      <input placeholder="Id" name="id" value={this.state.fields.id} onChange={this.handleChange}></input>&nbsp;
       <Button variant="info" onClick={this.handleFormSubmit}>Search</Button>
       <p>{this.state.person}</p>
       </>

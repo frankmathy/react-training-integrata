@@ -10,6 +10,7 @@ let PeopleComponent = (props) => {
         <Table striped bordered hover>
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Last Name</th>
                     <th>First Name</th>
                     <th>Gender</th>

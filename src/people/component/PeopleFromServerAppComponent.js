@@ -6,6 +6,8 @@ import PeopleComponent from './PeopleComponent';
 import PersonInputComponent from './PersonInputComponent'
 import PersonSearchComponent from './PersonSearchComponent'
 import { userProfile } from '../model/PeopleData'
+import NavigationComponent from './NavigationComponent'
+import {BrowserRouter, Switch, Route} from 'react-router-dom'
 
 class PeopleAppComponent extends Component {
   state = {
@@ -16,7 +18,7 @@ class PeopleAppComponent extends Component {
   async loadData()  {
     try {
       let result = await fetch('http://localhost:8080/people')
-      this.state.people.persons = await result.json()
+      this.state.people.setPersons(await result.json())
       this.setState({...this.state, ...{people: this.state.people}})
     } catch(error) {
       alert("Error loading person data: " + error)
@@ -35,14 +37,16 @@ class PeopleAppComponent extends Component {
 
   render() {
     return (
-      <div>
-        <div className="App-currentUser">
+      <BrowserRouter>
           Aktueller User: <PersonComponent person={this.state.userProfile} detail={false}/>
-        </div>
-        <PeopleComponent people={this.state.people}/>
-        <PersonInputComponent handleCreatePerson={this.createPersonCallback}/>
-        <PersonSearchComponent/>
-      </div>
+          <NavigationComponent/>
+          <hr/>
+          <Switch>
+            <Route path='/people' render={(props) => <PeopleComponent {...props} people={this.state.people}/>} />
+            <Route path='/peopleInput' render={(props) => <PersonInputComponent {...props} handleCreatePerson={this.createPersonCallback}/>} />
+            <Route path='/peopleSearch' component={PersonSearchComponent}/>    
+          </Switch>
+      </BrowserRouter>
     );
   }
 }

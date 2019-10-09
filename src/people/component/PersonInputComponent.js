@@ -13,6 +13,7 @@ class PersonInputComponent extends Component {
 
     handleFormSubmit = (event) => {
         this.props.handleCreatePerson(this.state.fields)
+        this.props.history.push('/people')
         event.preventDefault()
     }
 
