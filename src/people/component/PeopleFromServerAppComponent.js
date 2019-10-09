@@ -4,6 +4,7 @@ import { People } from '../model/People'
 import PersonComponent from './PersonComponent'
 import PeopleComponent from './PeopleComponent';
 import PersonInputComponent from './PersonInputComponent'
+import PersonSearchComponent from './PersonSearchComponent'
 import { userProfile } from '../model/PeopleData'
 
 class PeopleAppComponent extends Component {
@@ -40,6 +41,7 @@ class PeopleAppComponent extends Component {
         </div>
         <PeopleComponent people={this.state.people}/>
         <PersonInputComponent handleCreatePerson={this.createPersonCallback}/>
+        <PersonSearchComponent/>
       </div>
     );
   }

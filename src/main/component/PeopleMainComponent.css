@@ -1,12 +1,12 @@
 .header {
     text-align: center;
     font-size: 3em;
-    background-color: blue;
+    background-color: lightgray;
   }
   
   .footer {
     text-align: center;
     font-size: 0.75em;
-    background-color: lightblue;
+    background-color: lightgray;
   }
   
