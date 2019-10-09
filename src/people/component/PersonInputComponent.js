@@ -4,10 +4,10 @@ import Button from 'react-bootstrap/Button';
 class PersonInputComponent extends Component {
     state = {
         fields: {
-            lastname: 'Meier',
-            firstname: 'Hans',
+            lastname: '',
+            firstname: '',
             gender: 'm',
-            height: 175
+            height: '180'
         }
     }
 
@@ -28,8 +28,8 @@ class PersonInputComponent extends Component {
         return (
             <form onSubmit={this.handleFormSubmit}>
                 &nbsp;
-                <input placeholder="Lastname" name="lastname" value={this.state.fields.lastname} onChange={this.handleChange}/>&nbsp;
                 <input placeholder="Firstname" name="firstname" value={this.state.fields.firstname} onChange={this.handleChange}/>&nbsp;
+                <input placeholder="Lastname" name="lastname" value={this.state.fields.lastname} onChange={this.handleChange}/>&nbsp;
                 <label>
                     Gender:&nbsp;
                     <select value={this.state.fields.gender} onChange={this.handleChange}>

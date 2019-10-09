@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import { People } from '../model/People'
-import PersonComponent from './PersonComponent'
 import PeopleComponent from './PeopleComponent';
 import PersonInputComponent from './PersonInputComponent'
 import PersonSearchComponent from './PersonSearchComponent'
@@ -38,9 +37,7 @@ class PeopleAppComponent extends Component {
   render() {
     return (
       <BrowserRouter>
-          Aktueller User: <PersonComponent person={this.state.userProfile} detail={false}/>
-          <NavigationComponent/>
-          <hr/>
+          <NavigationComponent person={this.state.userProfile}/>
           <Switch>
             <Route path='/people' render={(props) => <PeopleComponent {...props} people={this.state.people}/>} />
             <Route path='/peopleInput' render={(props) => <PersonInputComponent {...props} handleCreatePerson={this.createPersonCallback}/>} />
