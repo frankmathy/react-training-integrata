@@ -4,6 +4,7 @@ import PersonComponent from './PersonComponent'
 import PeopleComponent from './PeopleComponent';
 import PersonInputComponent from './PersonInputComponent'
 import { peopleData, userProfile } from '../model/PeopleData'
+import PersonSearchComponent from './PersonSearchComponent';
 
 class PeopleAppComponent extends Component {
   state = {people: peopleData, userProfile: userProfile}
